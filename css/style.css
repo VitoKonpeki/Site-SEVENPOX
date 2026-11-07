@@ -1,0 +1,358 @@
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+    color: #202938;
+}
+
+section {
+    padding: 75px 8%;
+    scroll-margin-top: 20px;
+}
+
+header {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100vh;
+    padding: 35px 25px;
+    background: #1a3561;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 55px;
+
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #759fe1;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fcfbf4;
+    padding: 35px;
+    font-size: 20px;
+    
+}
+
+/* ANIMAÇÃO DOS LINKS */
+
+nav a {
+  text-decoration: none;
+  font-family: ubuntu, Arial, Helvetica, sans-serif;
+  border-left: 4px;
+}
+
+nav a:hover {
+  padding-left: 30px;
+  border-left: 4px solid blueviolet;
+  color: blueviolet;
+  transition: .4s;
+}
+
+/* nav a {
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #759fe1;
+    transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #759fe1;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+} */
+
+/* CONTEÚDO AO LADO DO MENU */
+
+main {
+    margin-left: 230px;
+}
+
+/* CAPA */
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 20, 35, 0.95),
+            rgba(10, 20, 35, 0.55)
+        ),
+        center / cover;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* BOTÕES */
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #759fe1;
+    color: #101b2b;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+    background: #1b086e;
+    transform: translateY(-3px);
+}
+
+/* TÍTULOS */
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    color: #667085;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* FLIP CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.flip-card {
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    outline-offset: 5px;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background: #101b2b;
+    color: white;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.85)
+    );
+}
+
+.card-overlay h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.flip-card-back {
+    background: #101b2b;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotateY(180deg);
+    border-bottom: 5px solid #759fe1;
+}
+
+.flip-card-back h3 {
+    color: #759fe1;
+    margin-bottom: 15px;
+}
+
+.flip-card-back p {
+    line-height: 1.7;
+}
+
+.flip-card-back span {
+    margin-top: 15px;
+    color: #ffca9f;
+    font-size: 13px;
+}
+
+/* SOBRE */
+
+.about {
+    background: white;
+    text-align: center;
+}
+
+.about p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #1a1223;
+    line-height: 1.8;
+}
+
+section a {
+    text-decoration:none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+/* CONTATO */
+
+.contact {
+    text-align: center;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #101b2b;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 750px) {
+    header {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        align-items: center;
+        gap: 20px;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .flip-card {
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .flip-card-inner,
+    nav a::after,
+    .btn {
+        transition: none;
+    }
+}
